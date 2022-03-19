@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans&family=Press+Start+2P&family=Roboto:wght@400;500;700;900&display=swap');
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .color{
+            height: 1000vh;
+            width: 100%;
+            background-color: lightgray;
+            transition: 1s;
+            display: flex;
+            justify-content: center;
+        }
+        .titolo{
+            position: fixed;
+            transition: 1s;
+            top: 50vh;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 30px;
+        }
+ 
+    </style>
+</head>
+<body>
+    
+    <div class="color" id="color">
+        <div class="titolo" id="titolo">Scroll the Page</div>
+    </div>
+
+    <script>
+        var precendente=0;
+        let sfondo = document.getElementById('color')
+        let titolo = document.getElementById('titolo')
+
+        window.addEventListener("scroll" , function(event){
+            console.clear();
+            var scroll = this.scrollY;
+            console.log(scroll)
+
+            if(scroll > 0 && scroll < window.innerHeight){
+                console.log("SCHERMO 1")
+                sfondo.style.backgroundColor = "#0d47a1";
+                titolo.style.color = "white";
+            }
+            else if(scroll >= window.innerHeight && scroll < window.innerHeight*2){
+                console.log("SCHERMO 2")
+                sfondo.style.backgroundColor = "#1565c0";
+            }
+            else if(scroll >= window.innerHeight*2 && scroll < window.innerHeight*3){
+                console.log("SCHERMO 3")
+                sfondo.style.backgroundColor = "#1976d2";
+            }
+            else if(scroll >= window.innerHeight*3 && scroll < window.innerHeight*4){
+                console.log("SCHERMO 4")
+                sfondo.style.backgroundColor = "#1e88e5";
+                titolo.style.color = "black";
+            }
+            else if(scroll >= window.innerHeight*4 && scroll < window.innerHeight*5){
+                console.log("SCHERMO 5")
+                sfondo.style.backgroundColor = "#2196f3";
+            }
+            else if(scroll >= window.innerHeight*5 && scroll < window.innerHeight*6){
+                console.log("SCHERMO 6")
+                sfondo.style.backgroundColor = "#42a5f5";
+            }
+            else if(scroll >= window.innerHeight*6 && scroll < window.innerHeight*7){
+                console.log("SCHERMO 7")
+                sfondo.style.backgroundColor = "#64b5f6";
+            }
+            else if(scroll >= window.innerHeight*7 && scroll < window.innerHeight*8){
+                console.log("SCHERMO 8")
+                sfondo.style.backgroundColor = "#90caf9";
+            }
+            else if(scroll >= window.innerHeight*8 && scroll < window.innerHeight*9){
+                console.log("SCHERMO 9")
+                sfondo.style.backgroundColor = "#bbdefb";
+            }
+            else if(scroll >= window.innerHeight*8 && scroll < window.innerHeight*9){
+                console.log("SCHERMO 10")
+                sfondo.style.backgroundColor = "#e3f2fd";
+            }
+
+            if(scroll < precendente){
+                console.log('Su');
+            }
+            else{
+                console.log('Giu');
+            }
+            precendente = scroll;
+
+        });
+
+    </script>
+</body>
+</html>
